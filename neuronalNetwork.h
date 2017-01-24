@@ -1,10 +1,5 @@
 
-#include <iostream>
-#include <ctime>
 
-
-class neuron;
-class layer;
 class neuronalNetwork{
 public:
 
@@ -16,17 +11,4 @@ private:
 
 
 };
-class layer{
-public:
-	~layer();
 
-
-private:
-}
-class neuron{
-public:
-	~neuron();
-
-private:
-
-};
