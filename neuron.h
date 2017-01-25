@@ -9,6 +9,8 @@ public:
 	void putInputs(double* inputs);
 	//calculate the output
 	double calculate();
+	//put new weight
+	void putWeight(unsigned pos, double value);
 
 	~neuron();
 
