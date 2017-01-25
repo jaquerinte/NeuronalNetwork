@@ -7,6 +7,7 @@ neuron::neuron(unsigned numinputs,double bias){
 	this->weights = new double[numinputs + 1];
 	this->inputs = new double[numinputs];
 	this->output = 0;
+	this->initWeights();
 }
 neuron::~neuron(){
 	this->bias = 0;
@@ -19,7 +20,7 @@ double neuron::calculate(){
 	double total = 0;
 	for(unsigned i = 0; i < this->numinputs; ++i){
 		//TODO test
-		total += this->weights[i]*this->imputs[i];
+		total += this->weights[i]*this->inputs[i];
 	}
 	//TODO test
 	//adding the bias value with his weight
@@ -27,8 +28,12 @@ double neuron::calculate(){
 	//e calculated
 	this->e = total;
 	//activation function
+	this->output = activationFunctions::sigmoid(this->e);
+
+	return this->output;
 	
 }
+
 void neuron::putInputs(double* inputs){
 	//TODO posible optimization using memcpy
 	for(unsigned i = 0; i < this->numinputs; ++i){
@@ -37,6 +42,9 @@ void neuron::putInputs(double* inputs){
 }
 void neuron::putWeight(unsigned pos, double value){
 	this->weights[pos] = value;
+}
+double getE(){
+	return this->e;
 }
 void neuron::initWeights(){
 	for(unsigned i = 0; i < this->numinputs + 1; ++i){

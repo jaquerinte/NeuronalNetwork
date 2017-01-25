@@ -1,5 +1,8 @@
+#ifndef NEURON_H
+#define NEURON_H
+
 #include "definitions.h"
-#include "neuronalNeworkFunctions.h"
+#include "activationFunctions.h"
 
 class neuron{
 public:
@@ -11,6 +14,10 @@ public:
 	double calculate();
 	//put new weight
 	void putWeight(unsigned pos, double value);
+	//get weight value
+	double getWeight(unsigned pos);
+	//get e value
+	double getE();
 
 	~neuron();
 
@@ -34,3 +41,4 @@ private:
 
 
 };
+#endif
