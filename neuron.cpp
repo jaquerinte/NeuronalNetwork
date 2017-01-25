@@ -13,8 +13,9 @@ neuron::~neuron(){
 	this->bias = 0;
 	this->numinputs = 0;
 	this->output = 0;
+	this->e = 0;
 	delete[] this->weights;
-	delete[] this->imputs;
+	delete[] this->inputs;
 }
 double neuron::calculate(){
 	double total = 0;
@@ -43,7 +44,10 @@ void neuron::putInputs(double* inputs){
 void neuron::putWeight(unsigned pos, double value){
 	this->weights[pos] = value;
 }
-double getE(){
+double neuron::getWeight(unsigned pos){
+	return this->weights[pos];
+}
+double neuron::getE(){
 	return this->e;
 }
 void neuron::initWeights(){
