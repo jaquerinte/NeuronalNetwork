@@ -3,7 +3,7 @@
 #include "activationFunctions.h"
 
 #define BIAS 0.8
-#define ITERATIONS 200
+#define ITERATIONS 1000
 #define FI 0.2
 
 int main(int argc, char** argv){
